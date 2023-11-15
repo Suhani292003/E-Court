@@ -1,0 +1,190 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    position: relative;
+}
+.logo {
+    height: 120px;
+}
+.nav-head h1, button {
+    display: inline;
+}
+.nav-head button {
+margin-right: 30px;
+/* background-color: rgb(31, 6, 1); */
+background-color: rgb(61,12,2);
+color: white;
+text-decoration: dotted;
+
+}
+.nav-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav a {
+    display: table-cell;
+}
+nav div {
+    display: table-cell;
+}
+.navbar {
+    background-color: rgb(61,12,2);
+} 
+.navbar button{
+    background-color: rgb(61,12,2);
+    color: white;
+    text-decoration: dotted;
+} 
+ul li {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 20px;
+    color: white;
+    align-items: center;
+}
+#search {
+    margin-left: auto;
+}
+.conatiner {
+    width: 700px;
+    margin: 30px auto;
+}
+.carousel-caption {
+    padding-bottom: 15rem;
+}
+.img-fluid{
+    height: 400px;
+}
+.heading{
+    font-size: 30px;
+}
+.main .btn{
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 14px 24px;
+    border: none;
+    /* transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s; */
+    color: rgb(202, 202, 202);
+}
+.carousel-indicators [data-bs-target] {
+    background-color:rgb(230, 230, 230) ;
+    border-color: rgb(230, 230, 230);
+    margin: 0px 4px;
+}    
+.carousel-control-prev{
+    opacity: 0;
+}
+.carousel-control-next{
+    opacity: 0;
+}
+.notice {
+    width: 700px;
+    margin: 30px auto;
+    margin-top: 80px;
+}
+.head {
+    background-color: rgb(61,12,2);
+    color: white;
+    padding: 5px;
+}
+head h1 {
+    display: inline;
+    margin: auto;
+}
+.shead {
+    background-color: rgba(85, 42, 1, 0.253);
+    color: rgb(14, 14, 14);
+    padding: 5px;
+}
+p {
+    background-color: rgb(216, 216, 216);
+    padding: 5px;
+}
+.bot {
+    position: absolute;
+    bottom: 42%;
+    right: 0;
+    height: 400px;
+    width: 300px;
+}
+.chatbot {
+    position: relative;
+    height: 400px;
+    width: 300px;
+    background-color: rgb(216, 216, 216);
+}
+.chatbot img {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.assistent {
+    display: inline;
+    background-color: rgba(85, 42, 1, 0.253);
+    padding: 5px;
+    border-radius: 10px;
+    position: absolute;
+    left: 2%;
+    bottom: 12%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.inbox  {
+    border-radius: 15px;
+    width: 85%;
+    position: absolute;
+    right: 6%;
+    bottom: 2%;
+    /* margin: 5px; */
+}
+.inbox input {
+    width: 100%;
+}
+.chatbot button {
+    position: absolute;
+    right: 4%;
+    bottom: 2.2%;
+    border-radius: 50%;
+    display: inline;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(63, 0, 0);
+    color: white;
+    
+}   
+.cards {
+    position: absolute;
+    bottom: 48%;
+    left: 1.1%;
+    display: inline-grid;
+    align-items: center;
+    justify-content: center ;
+    height: 350px;
+    width: 300px;
+} 
+.card {
+    position: relative;
+    width: 250px;
+    height: auto;
+    background-color: rgba(85, 42, 1, 0.253);
+}
+.des {
+    width: 78%;
+    font-size: 14px;
+    padding: 5px;
+}
+.card button {
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    width: 22px;
+}
