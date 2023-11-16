@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("Public"));
-// app.set("view engine", "html");
+app.set("view engine", "ejs");
 const path = require('path');
 
 app.get('/', (req, res) => {
