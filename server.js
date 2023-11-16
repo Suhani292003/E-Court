@@ -2,23 +2,24 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const path = require('path');
 const app = express();
+const port = 3000;
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("Public"));
 app.set("view engine", "ejs");
-const path = require('path');
+app.set('views',path.join(__dirname,'views'));
 
-app.get('/', (req, res) => {
-    res.sendFile('Public/index.html' , { root : __dirname});
+app.get('/logging',function(req,res){
+    return res.render("login",{title:"login"});
 })
-app.get('/logging', (req, res)=> {
-    res.sendFile('Public/login.html' , { root : __dirname});
+app.get('/',function(req,res){
+    return res.render('index',{title:"E-court"});
 })
-app.get('/register', (req, res)=> {
-    res.sendFile('Public/register.html' , { root : __dirname});
+app.get('/register',(req,res)=>{
+    return res.render('register',{title:"register"});
 })
 
-app.listen(3000, () => {
-    console.log("app listening at port 3000")
+app.listen(port, () => {
+    console.log("app listening at port:",port)
 })
