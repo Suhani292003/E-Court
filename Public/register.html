@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=title%></title>
+    <title>Register</title>
 </head>
 <style>
     *{
@@ -123,7 +123,7 @@ form .fields .input-field{
     <div class="container">
         <header>Registration form</header>
 
-        <form action="#">
+        <form action="/register" method="post">
             <div class="form first">
                 <div class="details personal">
                     <span class="title">Personal Details</span>
@@ -131,31 +131,29 @@ form .fields .input-field{
                     <div class="fields">
                         <div class="input-field">
                             <label>Full Name</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input type="text" name="name" placeholder="Enter your name" required>
                         </div>
                         <div class="input-field">
                             <label>Date of Birth</label>
-                            <input type="date" placeholder="Enter your name" required>
+                            <input type="date" name="dob" placeholder="Enter your name" required>
                         </div>
                         <div class="input-field">
                             <label>Email</label>
-                            <input type="text" placeholder="Enter your Email" required>
+                            <input type="email" name="email" placeholder="Enter your Email" required>
                         </div>
 
                         <div class="input-field">
                             <label>Mobile Number (+91)</label>
-                            <input type="number" placeholder="Enter Mobile Number" required>
+                            <input type="number" name="phone" placeholder="Enter Mobile Number" required>
                         </div>
 
                         <div class="input-field">
                             <label>Gender</label>
-                            <input type="text
-                                " placeholder="Enter your gender" required>
+                            <input type="text" name="gender" placeholder="Enter your gender" required>
                         </div>
                         <div class="input-field">
                             <label>State</label>
-                            <input type="text
-                                " placeholder="Enter State" required>
+                            <input type="text" name="state" placeholder="Enter State" required>
                         </div>
                     </div>
                 </div>
@@ -167,15 +165,15 @@ form .fields .input-field{
                     <div class="fields">
                         <div class="input-field">
                             <label>Password</label>
-                            <input type="text" placeholder="Enter Password" required>
+                            <input type="text" name="password" placeholder="Enter Password" required>
                         </div>
                         <div class="input-field">
                             <label>Confirm Password</label>
-                            <input type="text" placeholder="Enter Confirm Password" required>
+                            <input type="text" name="confirm_password" placeholder="Enter Confirm Password" required>
                         </div>
                         <div class="input-field">
                             <label>Face ID</label>
-                            <input type="text" placeholder="Enter Face ID" required>
+                            <input type="text" name="face_id" placeholder="Enter Face ID" required>
                         </div>
 
                       
