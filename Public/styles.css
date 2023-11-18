@@ -111,7 +111,7 @@ p {
 }
 .bot {
     position: absolute;
-    bottom: 42%;
+    top: 18%;
     right: 0;
     height: 400px;
     width: 300px;
@@ -163,7 +163,7 @@ p {
 }   
 .cards {
     position: absolute;
-    bottom: 48%;
+    top: 18%;
     left: 1.1%;
     display: inline-grid;
     align-items: center;
@@ -187,4 +187,29 @@ p {
     right: 2%;
     top: 2%;
     width: 22px;
+}
+.links {
+    display: flex;
+    justify-content: space-around;
+    font-size: small;
+    background-color: rgba(85, 42, 1, 0.253);
+    height: 250px;
+    align-items: center; 
+    margin-top: 70px;
+}
+.Qlinks {
+    margin-left: 60px;
+}
+.partners img {
+    width: 150px;
+    padding: 25px;
+}
+.copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: rgb(63, 0, 0);;
+    color: white;
+    font-size: smaller;
 }
