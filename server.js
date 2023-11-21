@@ -26,6 +26,21 @@ app.get('/logging', (req, res)=> {
 app.get('/register', (req, res)=> {
     res.sendFile('Public/register.html' , { root : __dirname});
 })
+app.get('/service',(req,res)=>{
+  res.sendFile('Public/services.html',{root:__dirname});
+})
+app.get('/about',(req,res)=>{
+  res.sendFile('Public/aboutUs.html',{root:__dirname});
+})
+app.get('/dashboard',(req,res)=>{
+  res.sendFile('Public/dashboard.html',{root:__dirname});
+})
+app.get('/case',(req,res)=>{
+  res.sendFile('/Public/case.html',{root:__dirname});
+})
+app.get('/complaint',(req,res)=>{
+  res.sendFile('Public/complaint.html',{root:__dirname});
+})
 
 app.post('/login',(req,res)=>{
     const dataToSave = {
