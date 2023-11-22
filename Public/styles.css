@@ -6,23 +6,26 @@ body {
     position: relative;
 }
 .logo {
-    height: 120px;
+    height: 30%;
 }
 .nav-head h1, button {
     display: inline;
 }
 .nav-head button {
-margin-right: 30px;
-/* background-color: rgb(31, 6, 1); */
+margin-right: 1.5rem;
 background-color: rgb(61,12,2);
 color: white;
 text-decoration: dotted;
-
 }
 .nav-head {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+@media screen and (max-width:500px) {
+    nav h1{
+        font-size: medium;
+    }
 }
 nav a {
     display: table-cell;
@@ -32,6 +35,7 @@ nav div {
 }
 .navbar {
     background-color: rgb(61,12,2);
+    width: 100%;
 } 
 .navbar button{
     background-color: rgb(61,12,2);
@@ -42,7 +46,7 @@ ul li {
     text-decoration: none;
     display: flex;
     justify-content: space-between;
-    margin: 0px 20px;
+    margin: 0px 1.4rem;
     color: white;
     align-items: center;
 }
@@ -50,19 +54,14 @@ ul li {
     margin-left: auto;
 }
 .conatiner {
-    width: 700px;
-    margin: 30px auto;
+    width: 50%;
+    margin: 2%;
+    margin-left: 23%; 
 }
 .carousel-caption {
     padding-bottom: 15rem;
 }
-.img-fluid{
-    height: 400px;
-}
-.heading{
-    font-size: 30px;
-}
-.main .btn{
+.btn{
     display: inline-block;
     outline: none;
     cursor: pointer;
@@ -72,24 +71,38 @@ ul li {
     border-radius: 8px;
     padding: 14px 24px;
     border: none;
-    /* transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s; */
     color: rgb(202, 202, 202);
+}
+.main .btn1{
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    border-radius: 30%;
+    position: relative;
+    bottom: 13rem;
+    padding: .5rem;
+    opacity: 0;
+    color: rgb(202, 202, 202);
+  }
+.carousel-item img{
+    height: 25rem;
+    /* width: 25rem; */
+}
+.main .btn1:hover{
+    opacity: 100;
 }
 .carousel-indicators [data-bs-target] {
     background-color:rgb(230, 230, 230) ;
     border-color: rgb(230, 230, 230);
-    margin: 0px 4px;
+    margin: 0px 2%;
+    position: relative;
+    bottom: 3rem;
 }    
-.carousel-control-prev{
-    opacity: 0;
-}
-.carousel-control-next{
-    opacity: 0;
-}
 .notice {
-    width: 700px;
-    margin: 30px auto;
-    margin-top: 80px;
+    width: 50%;
+    /* margin: 30px auto; */
+    /* margin-top: 80px; */
+    margin-left:23% ;
 }
 .head {
     background-color: rgb(61,12,2);
@@ -111,20 +124,20 @@ p {
 }
 .bot {
     position: absolute;
-    top: 18%;
-    right: 0;
-    height: 400px;
-    width: 300px;
+    top: 30%;
+    right: 1%;
+    height: 24.5%;
+    width: 24.5%;
 }
 .chatbot {
     position: relative;
-    height: 400px;
-    width: 300px;
+    height: 100%;
+    width: 100%;
     background-color: rgb(216, 216, 216);
 }
 .chatbot img {
-    height: 25px;
-    width: 25px;
+    height: 1rem;
+    width: 1rem;
     border-radius: 50%;
     margin-right: 5px;
 }
@@ -132,19 +145,18 @@ p {
     display: inline;
     background-color: rgba(85, 42, 1, 0.253);
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 4%;
     position: absolute;
     left: 2%;
     bottom: 12%;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .inbox  {
-    border-radius: 15px;
+    border-radius: 1rem;
     width: 85%;
     position: absolute;
     right: 6%;
     bottom: 2%;
-    /* margin: 5px; */
 }
 .inbox input {
     width: 100%;
@@ -163,37 +175,37 @@ p {
 }   
 .cards {
     position: absolute;
-    top: 18%;
+    top: 11%;
     left: 1.1%;
     display: inline-grid;
     align-items: center;
     justify-content: center ;
-    height: 350px;
-    width: 300px;
+    height: 25%;
+    width: 20%;
 } 
 .card {
     position: relative;
-    width: 250px;
+    /* width: 250px; */
     height: auto;
     background-color: rgba(85, 42, 1, 0.253);
 }
 .des {
-    width: 78%;
-    font-size: 14px;
-    padding: 5px;
+    /* width: 78%; */
+    font-size: .9rem;
+    padding: .5rem;
 }
 .card button {
     position: absolute;
     right: 2%;
     top: 2%;
-    width: 22px;
+    width: 1.5rem;
 }
 .links {
     display: flex;
     justify-content: space-around;
     font-size: small;
     background-color: rgba(85, 42, 1, 0.253);
-    height: 250px;
+    height: 25%;
     align-items: center; 
     margin-top: 70px;
 }
@@ -212,4 +224,8 @@ p {
     background-color: rgb(63, 0, 0);;
     color: white;
     font-size: smaller;
+}
+
+@media screen and (min-width:500px) {
+    
 }
