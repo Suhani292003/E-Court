@@ -7,6 +7,7 @@ const port = 3000;
 const db = require('./config/mongoose');
 const Contact = require('./model/login');
 const Register = require('./model/register')
+const Register_client = require('./model/register1')
 const app = express();
 
 //app.set("view engine", "ejs");
@@ -20,11 +21,20 @@ app.use(express.static("Public"));
 app.get('/', (req, res) => {
     res.sendFile('Public/index.html' , { root : __dirname});
 })
+app.get('/home', (req, res) => {
+  res.sendFile('Public/index1.html' , { root : __dirname});
+})
 app.get('/logging', (req, res)=> {
     res.sendFile('Public/login.html' , { root : __dirname});
 })
+app.get('/logging1', (req, res)=> {
+  res.sendFile('Public/login_client.html' , { root : __dirname});
+})
 app.get('/register', (req, res)=> {
     res.sendFile('Public/register.html' , { root : __dirname});
+})
+app.get('/register1', (req, res)=> {
+  res.sendFile('Public/register_client.html' , { root : __dirname});
 })
 app.get('/service',(req,res)=>{
   res.sendFile('Public/services.html',{root:__dirname});
@@ -34,6 +44,9 @@ app.get('/about',(req,res)=>{
 })
 app.get('/dashboard',(req,res)=>{
   res.sendFile('Public/dashboard.html',{root:__dirname});
+})
+app.get('/dashboard_client',(req,res)=>{
+  res.sendFile('Public/dashboard_client.html',{root:__dirname});
 })
 app.get('/case',(req,res)=>{
   res.sendFile('/Public/case.html',{root:__dirname});
@@ -78,6 +91,29 @@ app.post('/register',(req,res)=>{
         return;
       })
       return res.redirect('back')
+});
+app.post('/register1',(req,res)=>{
+  const dataToSave = {
+      name:req.body.name,
+      dob:req.body.dob,
+      email:req.body.email,
+      phone:req.body.phone,
+      gender:req.body.gender,
+      state:req.body.state,
+      bar_association_no:req.body.bar_association_no,
+      password:req.body.password,
+      confirm_password:req.body.confirm_password,
+      face_id:req.body.face_id
+    }
+    Register_client.create(dataToSave)
+    .then((result)=>{
+      console.log("result",result);
+    })
+    .catch((error)=>{
+      console.error("Error",error);
+      return;
+    })
+    return res.redirect('back')
 });
 
 // app.get('/logging',function(req,res){

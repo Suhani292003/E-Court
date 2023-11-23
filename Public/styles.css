@@ -6,7 +6,7 @@ body {
     position: relative;
 }
 .logo {
-    height: 30%;
+    height: 80px;
 }
 .nav-head h1, button {
     display: inline;

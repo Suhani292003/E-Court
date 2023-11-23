@@ -25,6 +25,10 @@ const register_schema = new mongoose.Schema({
         type:String,
         required:true
     },
+    bar_association_no:{
+        type:String,
+        required:true
+    },
     password:{
         type:String,
         required:true
