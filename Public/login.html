@@ -198,13 +198,20 @@ ul li {
                 <label><input type="checkbox">Remember Me</label>
                 <a href="#">Forgot Password</a>
             </div>
-            <!-- <button type="submit" class="btn"><a href="/" style="text-decoration: none; color: white;">Login</a></button> -->
-            <a href="/"><button type="submit" class="btn" >Login</button></a>
+            <input type="submit" value="Login" class="btn" id="button11">
+            <!-- <button type="submit" class="btn" id="button11">Login</button> -->
+            <!-- <button type="submit" class="btn" value="Login" style="color: white;"><a href="/" style="text-decoration: none; color: white;"></a></button> -->
+            <!-- <a href="/"><button type="submit" class="btn">Login</button></a> -->
             <div class="register-link">
                 <p>Don't have an account? <a href="/register">Register</a></p>
             </div>
         </form>
     </div>
 </div>
+<script>
+    document.getElementById('button11').addEventListener('click',()=>{
+        window.location.href = '/';
+    })
+</script>
 </body>
 </html>

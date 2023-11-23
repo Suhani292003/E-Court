@@ -7,13 +7,15 @@ const port = 3000;
 const db = require('./config/mongoose');
 const Contact = require('./model/login');
 const Register = require('./model/register')
-const Register_client = require('./model/register1')
+const Register_client = require('./model/register1');
+const Contact_client = require('./model/login_client');
 const app = express();
 
 //app.set("view engine", "ejs");
 //app.set('views',path.join(__dirname,'views'));
 
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 app.use(express.static("Public"));
 
 
@@ -24,6 +26,10 @@ app.get('/', (req, res) => {
 app.get('/home', (req, res) => {
   res.sendFile('Public/index1.html' , { root : __dirname});
 })
+app.get('/home1', (req, res) => {
+  res.sendFile('Public/index2.html' , { root : __dirname});
+})
+
 app.get('/logging', (req, res)=> {
     res.sendFile('Public/login.html' , { root : __dirname});
 })
@@ -48,6 +54,9 @@ app.get('/dashboard',(req,res)=>{
 app.get('/dashboard_client',(req,res)=>{
   res.sendFile('Public/dashboard_client.html',{root:__dirname});
 })
+app.get('/dashboard_lawyer',(req,res)=>{
+  res.sendFile('Public/dashboard_lawyer.html',{root:__dirname});
+})
 app.get('/case',(req,res)=>{
   res.sendFile('/Public/case.html',{root:__dirname});
 })
@@ -55,20 +64,35 @@ app.get('/complaint',(req,res)=>{
   res.sendFile('Public/complaint.html',{root:__dirname});
 })
 
-app.post('/login',(req,res)=>{
+app.post('/login_client',(req,res)=>{
     const dataToSave = {
         username :req.body.username,
         password : req.body.password
       }
-      Contact.create(dataToSave)
+      Contact_client.create(dataToSave)
       .then((result)=>{
-        console.log("result",result);
+        console.log("result of client login:",result);
       })
       .catch((error)=>{
         console.error("Error",error);
         return;
       })
-      return res.redirect('back')
+      return res.redirect('index1.html')
+});
+app.post('/login',(req,res)=>{
+  const dataToSave = {
+      username :req.body.username,
+      password : req.body.password
+    }
+    Contact.create(dataToSave)
+    .then((result)=>{
+      console.log("result of login lawyer:",result);
+    })
+    .catch((error)=>{
+      console.error("Error",error);
+      return;
+    })
+    return res.redirect('index2.html')
 });
 app.post('/register',(req,res)=>{
     const dataToSave = {
@@ -84,13 +108,13 @@ app.post('/register',(req,res)=>{
       }
       Register.create(dataToSave)
       .then((result)=>{
-        console.log("result",result);
+        console.log("result of lawyer:",result);
       })
       .catch((error)=>{
         console.error("Error",error);
         return;
       })
-      return res.redirect('back')
+      return res.redirect('/login.html')
 });
 app.post('/register1',(req,res)=>{
   const dataToSave = {
@@ -107,13 +131,13 @@ app.post('/register1',(req,res)=>{
     }
     Register_client.create(dataToSave)
     .then((result)=>{
-      console.log("result",result);
+      console.log("result of register client:",result);
     })
     .catch((error)=>{
       console.error("Error",error);
       return;
     })
-    return res.redirect('back')
+    return res.redirect('/login_client.html')
 });
 
 // app.get('/logging',function(req,res){
