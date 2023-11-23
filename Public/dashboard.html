@@ -155,7 +155,7 @@ h6 {
                   <h5 class="card-title">Case Status</h5>
                   <h6 class="card-subtitle mb-2 text-body-secondary">Check your case status</h6>
                   <p class="card-text">You can check your case status by entering your case number.</p>
-                  <a href="#" class="card-link">Click here</a>
+                  <a class="card-link" id="dashboard_click1" style="cursor: pointer; color: blue;">Click here</a>
                   <!-- <a href="#" class="card-link">Another link</a> -->
                 </div>
             </div>    
@@ -164,7 +164,7 @@ h6 {
                   <h5 class="card-title">Hearing Conference</h5>
                   <h6 class="card-subtitle mb-2 text-body-secondary">Online hearing details</h6>
                   <p class="card-text">Check your online video hearing details & other options here.</p>
-                  <a href="#" class="card-link">Click here</a>
+                  <a class="card-link" id="dashboard_click2" style="cursor: pointer; color: blue;">Click here</a>
                   <!-- <a href="#" class="card-link">Another link</a> -->
                 </div>
               </div>
@@ -176,7 +176,7 @@ h6 {
             <h4>Quick links</h4>
             <a href="">Video Tutorials</a><br>
             <a href="">Contact Us</a><br>
-            <a href="">About Us</a><br>
+            <a href="/about">About Us</a><br>
             <a href="">e-committee</a><br>
             <a href="">Terms and Condition</a><br>
             <a href="">Site Map</a><br>
@@ -195,9 +195,18 @@ h6 {
         </div>          
       </footer>  
       <script>
+        // document.getElementById('dashboard_click').addEventListener('click',()=>{
+        //   alert("First login");
+        // })
         document.getElementById('dashboard_click').addEventListener('click',()=>{
           alert("First login");
-        })
+        });
+        document.getElementById('dashboard_click1').addEventListener('click',()=>{
+          alert("First login");
+        });
+        document.getElementById('dashboard_click2').addEventListener('click',()=>{
+          alert("First login");
+        });
       </script>      
 </body>
 </html>
