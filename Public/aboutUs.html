@@ -66,6 +66,8 @@ ul li {
     height: 250px;
     align-items: center; 
     margin-top: 70px;
+    position:relative;
+    top: 100%;
 }
 .Qlinks {
     margin-left: 60px;
@@ -82,6 +84,26 @@ ul li {
     background-color: rgb(63, 0, 0);;
     color: white;
     font-size: smaller;
+}
+.container{
+  position: relative;
+  top: 50px;
+}
+.con1{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+.head{
+  font-size: large;
+}
+.col1{
+  text-align: justify;
+  padding:0 20px 0 0;
+}
+.col2{
+  text-align: justify;
+  padding: 20px;
 }
 </style>    
 </head>
@@ -125,9 +147,11 @@ ul li {
           </nav> 
     <section>
         <div class="container">
-<p>Welcome to e-Court India, where the future of justice meets the convenience of technology. Our platform is designed to revolutionize the legal landscape by seamlessly integrating cutting-edge features that empower users to engage with the legal system in a more efficient and accessible manner.</p>
-
-<span>Who We Are:</span>
+         
+<p><strong class="head"> Welcome to e-Court India, where the future of justice meets the convenience of technology. Our platform is designed to revolutionize the legal landscape by seamlessly integrating cutting-edge features that empower users to engage with the legal system in a more efficient and accessible manner.</strong></p>
+<div class="con1">
+<div class="col1">
+<span style="font-weight: 500;">Who We Are:</span>
 <p>At e-Court India, we are committed to bridging the gap between the traditional court proceedings and the digital age. We understand the importance of timely and accessible justice, and our platform is a testament to our dedication to making legal processes more transparent, convenient, and user-friendly.</p>
 
 <span>Our Features:</span>
@@ -143,9 +167,10 @@ ul li {
 </p>
 <span>Case Details and Video Conference Access:</span>
 <p>Stay informed every step of the way. Users can easily access and track the details of their cases on our platform. Additionally, we provide a seamless interface for accessing video conference details, making it simple for participants to join virtual court hearings.
-</p>
-<span>Why Choose e-Court India:</span>
+</p></div>
 
+<div class="col2">
+<span style="font-weight: 500;">Why Choose e-Court India: <br></span>
 <span>Efficiency:</span>
 <p>Save time and resources with our streamlined online processes. No more waiting in long queues or dealing with paperwork.
 </p>
@@ -159,15 +184,15 @@ ul li {
 <p>Embrace the future of legal proceedings. e-Court India is at the forefront of innovation, constantly evolving to meet the needs of a rapidly changing world.
 </p>
 <p>Join us at e-Court India and be a part of a digital revolution that brings justice to your fingertips. Experience the future of legal proceedings with us – where technology meets fairness, and accessibility is paramount</p>
-        </div>
+</div></div></div>
     </section>
-    <footer>
+    <footer >
         <div class="links">
           <div class="Qlinks">
             <h4>Quick links</h4>
             <a href="">Video Tutorials</a><br>
             <a href="">Contact Us</a><br>
-            <a href="">About Us</a><br>
+            <a href="/about">About Us</a><br>
             <a href="">e-committee</a><br>
             <a href="">Terms and Condition</a><br>
             <a href="">Site Map</a><br>
