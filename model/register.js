@@ -11,11 +11,13 @@ const register_schema = new mongoose.Schema({
     },
     email:{
         type:String,
-        required:true
+        required:true,
+        unique:true
     },
     phone:{
         type:String,
-        required:true
+        required:true,
+        unique:true
     },
     gender:{
         type:String,
@@ -27,7 +29,8 @@ const register_schema = new mongoose.Schema({
     },
     bar_association_no:{
         type:String,
-        required:true
+        required:true,
+        unique:true
     },
     password:{
         type:String,
@@ -39,7 +42,7 @@ const register_schema = new mongoose.Schema({
     },
     face_id:{
         type:String,
-        required:true
+        // required:true
     }
 });
 

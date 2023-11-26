@@ -118,12 +118,21 @@ form .fields .input-field{
     margin: 50px 325px;
     background-color: brown;
 }
+.copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: rgb(63, 0, 0);;
+    color: white;
+    font-size: smaller;
+}
 </style>
 <body>
     <div class="container">
         <header>Registration form</header>
 
-        <form action="/register" method="post">
+        <form action="/lawyer/lawyer_register" method="post">
             <div class="form first">
                 <div class="details personal">
                     <span class="title">Personal Details</span>
@@ -188,5 +197,10 @@ form .fields .input-field{
             </div>
         </form>
     </div>
+    <!-- <footer>
+        <div class="copyright" style="position: relative; top: 20px;">
+            <span>Version : 1.0 © e-Court Portal, for online hearing conference. All Rights Reserved.</span>
+          </div> 
+    </footer> -->
 </body>
 </html>
