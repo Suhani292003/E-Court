@@ -31,14 +31,13 @@ module.exports.client_register = (req,res)=>{
       Register_client.findOne({email: submittedEmail.email})
       .then(existingUser=>{
         if(existingUser){
-          return res.status(200).json({ message: 'Already Register' });
+          // return res.status(200).json({ message: 'Already Register' });
+          return res.redirect('/client/register')
         }
         else{
           Register_client.create(dataToSave)
-          res.status(200).json({ message: 'Thank you for register' });
-          const filePath = path.join(__dirname, 'client', 'login_client.html'); // Path to your index.html file
-          res.sendFile(filePath);
-          return;
+          // res.status(200).json({ message: 'Thank you for register' });
+          return res.redirect('/client/logging')
         }
       })
       .catch(error=>{
@@ -48,5 +47,24 @@ module.exports.client_register = (req,res)=>{
 
 
 module.exports.client_login = (req,res)=>{
-    
+  const submittedEmail  = req.body
+  Register_client.findOne({email: submittedEmail.email})
+  .then(existingUser=>{
+    if(existingUser){
+      if(existingUser.password === submittedEmail.password){
+        res.cookie('client_id',existingUser.id);
+        res.redirect('/client/dashboard_client')
+        return
+      }else{
+        return res.redirect('/client/logging')
+        // return res.status(500).json({ message: 'Wrong password:'});
+      }
+    }
+    else{
+      return res.redirect('/client/logging')
+      }
+    })
+    .catch(error=>{
+      return res.status(500).json({ message: 'Internal server error', error: error.message });
+    }) 
 }

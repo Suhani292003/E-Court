@@ -4,13 +4,18 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-body{
-    background: linear-gradient(90deg,#3D0C02 0%,#450d02 30%,#873829 30%,#873829 100%);
-}
+/* body{ */
+    /* background: #3D0C02; */
+    /* position: relative; */
+/* } */
  .contactUs{
     position: relative;
     width: 100%;
-    padding: 40px 100px;
+    /* height: 900px; */
+    padding: 40px 60px;
+    top: 80px;
+    /* margin-top:80px ; */
+    background: #3D0C02;
 }
 .contactUs .title{
     display: flex;
@@ -35,6 +40,8 @@ body{
     padding: 40px;
     background:#fff;
     box-shadow: 0 5px 35px rgba(0,0,0,0.15);
+    /* position: relative;
+    top: 100px; */
 } 
 .box{
     position: relative;
@@ -93,7 +100,7 @@ body{
 }
 .inputBox input[type="submit"]
 {
-    background: #873829;
+    background: #873829e0;
     color: #fff;
     border: none;
     font-size: 1.1em;
@@ -109,7 +116,7 @@ body{
 
 /* info */
 .info{
-    background: #3D0C02;
+    background: #873829;
 }
 .info h3{
     color: #fff;
@@ -123,7 +130,7 @@ body{
     min-width: 40px;
     height: 40px;
     color: #fff;
-    background:#873829 ;
+    background:#3D0C02 ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,4 +204,73 @@ body{
         min-height: 300px;
         padding: 0;
     }
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    font-size: small;
+    background-color: rgba(85, 42, 1, 0.253);
+    height: 250px;
+    align-items: center; 
+    margin-top: 70px;
+    position:relative;
+    top: 100%;
+}
+.Qlinks {
+    margin-left: 60px;
+}
+.partners img {
+    width: 150px;
+    padding: 25px;
+}
+.copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: rgb(63, 0, 0);;
+    color: white;
+    font-size: smaller;
+}
+/* footer{
+    position: relative;
+    bottom: 60px;
+} */
+
+.logo {
+    height: 120px;
+}
+.nav-head h1, button {
+    display: inline;
+}
+.nav-head button {
+/* margin-right: 1.5rem; */
+/* background-color: rgb(31, 6, 1); */
+background-color: rgb(61,12,2);
+color: white;
+text-decoration: dotted;
+
+}
+.nav-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* height: 10px; */
+    margin-bottom: -100px;
+}
+nav a {
+    display: table-cell;
+}
+nav div {
+    display: table-cell;
+}
+
+ul li {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 1.4rem;
+    color: white;
+    align-items: center;
 }

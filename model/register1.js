@@ -16,8 +16,7 @@ const register_schema_client = new mongoose.Schema({
     },
     phone:{
         type:String,
-        required:true,
-        unique:true
+        required:true
     },
     gender:{
         type:String,
