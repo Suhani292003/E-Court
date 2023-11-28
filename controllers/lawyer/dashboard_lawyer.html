@@ -57,34 +57,34 @@
             <div id="newCase" class="box11 hide" >
               <div class="typeform">
                 <h3>case form</h3>
-                <form action="">
+                <form action="/lawyer/case" method="post">
                 <div class="line">
                     <label for="district">District :</label>
-                    <input type="text" required><br>
+                    <input type="text" name="district" required><br>
                 </div>
                 <div class="line">
                 
                 <label for="court">Court :</label>
-                <input type="radio" name="District court" id="districtCourt">
+                <input type="radio" name="court" value="District court" id="districtCourt">
                 <label for="districtCourt">District court</label>
-                <input type="radio" name="High court" id="highCourt">
+                <input type="radio" name="court" value="High court" id="highCourt">
                 <label for="highCourt">High court</label><br>
             </div>
     
                 <div class="line">
                 
                 <label for="mattertype">Matter type :</label>
-                <input type="radio" name="Urgent" id="Urgent">
+                <input type="radio" name="matter" value="Urgent" id="Urgent">
                 <label for="Urgent">Urgent</label>
-                <input type="radio" name="Ordinary" id="Ordinary">
+                <input type="radio" name="matter" value="Ordinary" id="Ordinary">
                 <label for="Ordinary">Ordinary</label><br>
             </div>
     
                 <div class="line">
                 
                 <label for="caseType">Case type :</label>
-                <select id="type">
-                    <option value="volvo"></option>
+                <select id="caseType" name="case_type">
+                    <!-- <option value="volvo"></option> -->
                     <option value="civil">Civil</option>
                     <option value="criminal">Criminal</option>
                     <option value="martial">Martial</option>
@@ -94,9 +94,9 @@
                 <div class="line">
                 
                 <label for="court">Is MACT matter :</label>
-                <input type="radio" name="yes" id="y">
+                <input type="radio" name="mact" value="yes" id="y">
                 <label for="yes">Yes</label>
-                <input type="radio" name="no" id="n">
+                <input type="radio" name="mact" value="no" id="n">
                 <label for="no">No</label><br>
             </div>
     
@@ -104,7 +104,10 @@
                 
                 <input class="btn btn-primary" type="reset" value="Reset">
                 <!-- <input class="btn btn-success" type="submit" value="Next"> -->
-                <button class="btn btn-primary" style="color: green;"><a href="/complaint" style="color:white; text-decoration: none;">Next</a></button>
+                <!-- <button class="btn btn-primary" style="color: green;"><a href="/complaint" style="color:white; text-decoration: none;">Next</a></button> -->
+                <button class="btn" type="submit">
+                  <span class="btnText">Next</span>
+              </button>
             </div>
     
             </form>
@@ -126,7 +129,7 @@
         <div class="Qlinks">
           <h4>Quick links</h4>
           <a href="">Video Tutorials</a><br>
-          <a href="">Contact Us</a><br>
+          <a href="/contactUs">Contact Us</a><br>
           <a href="/about">About Us</a><br>
           <a href="">e-committee</a><br>
           <a href="">Terms and Condition</a><br>

@@ -29,7 +29,7 @@ const register_schema = new mongoose.Schema({
     bar_association_no:{
         type:String,
         required:true,
-        // unique:true
+        unique:true
     },
     password:{
         type:String,

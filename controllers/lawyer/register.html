@@ -147,8 +147,17 @@ form .fields .input-field{
     background-color: white;
     margin-bottom: -100px;
 }
-
-
+fieldset{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    /* background-color: #333; */
+    
+}
+fieldset label{
+    width: 5px;
+    height: 5px;
+}
 </style>
 <body>
     <nav class="nav-head">
@@ -159,7 +168,7 @@ form .fields .input-field{
         <div class="con2">
         <header>Registration form</header>
 
-        <form action="/lawyer/lawyer_register" method="post">
+        <form action="/lawyer/lawyer_register" method="post" id="registrationForm">
             <div class="form first">
                 <div class="details personal" style="padding: 10px;">
                     <span class="title">Personal Details</span>
@@ -167,7 +176,7 @@ form .fields .input-field{
                     <div class="fields">
                         <div class="input-field">
                             <label>Full Name</label>
-                            <input type="text" name="name" placeholder="Enter your name" required>
+                            <input type="text" name="name" placeholder="Enter your name" required id="name">
                         </div>
                         <div class="input-field">
                             <label>Date of Birth</label>
@@ -183,9 +192,28 @@ form .fields .input-field{
                             <input type="number" name="phone" placeholder="Enter Mobile Number" required>
                         </div>
 
-                        <div class="input-field">
-                            <label>Gender</label>
-                            <input type="text" name="gender" placeholder="Enter your gender" required>
+                        <div class="input-field" style="position: relative; left: 10px;">
+                            <!-- <label>Gender</label>
+                            <input type="text" name="gender" placeholder="Enter your gender" required> -->
+                                <fieldset class="gender_button">
+                                  <legend style="font-size: small;">Gender</legend>
+                              
+                                  <label for="male" style="position: relative; bottom: 10px;">
+                                    <input type="radio" id="male" name="gender" value="male">
+                                    Male
+                                  </label>
+                                  <br>
+                                  <label for="female" style="position: relative; bottom: 9px;">
+                                    <input type="radio" id="female" name="gender" value="female" style="border: 2px solid black;" >
+                                    Female
+                                  </label>
+                                  <br>
+                                  <label for="trans" style="position: relative; bottom: 33px;">
+                                    <input type="radio" id="trans" name="gender" value="trans">
+                                    Trans
+                                  </label>
+                                </fieldset>
+                              
                         </div>
                         <div class="input-field">
                             <label>State</label>
