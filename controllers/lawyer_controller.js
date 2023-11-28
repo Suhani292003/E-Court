@@ -119,8 +119,7 @@ module.exports.case = (req,res)=>{
     mact:req.body.mact,
   }
   CaseForm.create(dataToSave)
-  return
-  // return res.redirect('/lawyer/complaint')
+  return res.redirect('/lawyer/complaint')
 }
 module.exports.complaintBox = (req,res)=>{
   const dataToSave = {
