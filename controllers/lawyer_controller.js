@@ -101,7 +101,7 @@ module.exports.lawyer_login =(req,res)=>{
     }
     else{
       res.redirect('/lawyer/logging')
-      console.log('not register')
+      console.log('not register with proper data')
       return;
       }
     })
