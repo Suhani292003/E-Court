@@ -3,6 +3,8 @@ const Register = require('../model/register');
 const Lawyer = require('../model/lawyer');
 const CaseForm = require('../model/case');
 const Complaint = require('../model/complaint')
+const Document = require('../model/document')
+const { exec } = require('child_process');
 const Otp = require('../model/otp');
 module.exports.register = function(req,res){
     
@@ -17,12 +19,12 @@ module.exports.number = (req,res)=>{
   const filePath = path.join(__dirname, 'lawyer', 'bar_no.html'); // Path to your index.html file
   res.sendFile(filePath);
 }
-module.exports.dashboard_lawyer = (req,res)=>{
-  const filePath = path.join(__dirname, 'lawyer', 'dashboard_lawyer.html'); // Path to your index.html file
-  res.sendFile(filePath);
-}
 module.exports.complaint = (req,res)=>{
   const filePath = path.join(__dirname, 'lawyer', 'complaint.html'); // Path to your index.html file
+    res.sendFile(filePath);
+}
+module.exports.document = (req,res)=>{
+  const filePath = path.join(__dirname, 'lawyer', 'document.html'); // Path to your index.html file
     res.sendFile(filePath);
 }
 
@@ -48,8 +50,7 @@ module.exports.lawyer_register = async (req, res) => {
                     state:req.body.state,
                     bar_association_no:req.body.bar_association_no,
                     password:req.body.password,
-                    confirm_password:req.body.confirm_password,
-                    face_id:req.body.face_id
+                    confirm_password:req.body.confirm_password
                   }
   const {email,bar_association_no} = req.body;
 
@@ -64,7 +65,7 @@ module.exports.lawyer_register = async (req, res) => {
     console.log(existingbarNo.bar_association_no)
     if (!existingLawyer && existingbarNo.bar_association_no===req.body.bar_association_no && existingbarNo.name===lower) {
       Register.create(dataToSave)
-      return res.redirect('/lawyer/logging');
+      return res.redirect('/lawyer/face');
     } 
     if(existingbarNo.bar_association_no!==req.body.bar_association_no || existingbarNo.name!==lower){
       //   // Bar_no does not exist, show bar no not registered message
@@ -89,7 +90,9 @@ module.exports.lawyer_login =(req,res)=>{
     if(existingUser){
       if(existingUser.password === submittedEmail.password){
         res.cookie('lawyer_id',existingUser.id);
-        res.redirect('/lawyer/dashboard_lawyer')
+        // res.redirect('/lawyer/dashboard_lawyer')
+        // res.render('../controllers/lawyer/new_dashboard')
+        res.redirect('/lawyer/Dashboard_lawyer');
         console.log('join')
         return
       }else{
@@ -124,7 +127,7 @@ module.exports.case = (req,res)=>{
 module.exports.complaintBox = (req,res)=>{
   const dataToSave = {
     Complainant_name:req.body.Complainant_name,
-    phon:req.body.phone,
+    phone:req.body.phone,
     com_relation:req.body.com_relation,
     address:req.body.address,
     relative_name:req.body.relative_name,
@@ -139,5 +142,43 @@ module.exports.complaintBox = (req,res)=>{
     pincode:req.body.pincode
   }
   Complaint.create(dataToSave)
-  return res.redirect('back');
+  return res.redirect('/lawyer/document');
+}
+module.exports.documentBox = (req,res)=>{
+  const dataToSave = {
+    Defendent_name:req.body.Defendent_name,
+    phone_def:req.body.phone_def,
+    gender:req.body.gender,
+    address:req.body.address,
+    email:req.body.email,
+    district:req.body.district,
+    Fir_copy:req.body.Fir_copy,
+    vakalatnama:req.body.vakalatnama,
+    Affidavit:req.body.Affidavit
+  }
+  Document.create(dataToSave)
+  return res.redirect('/lawyer/Dashboard_lawyer');
+}
+module.exports.Dashboard_lawyer = (req,res)=>{
+  Complaint.find({})
+  .then(documents => {
+    // Handle the fetched documents
+    res.render('../controllers/lawyer/dashboard_lawyer', { documents });
+  })
+  .catch(err => {
+    console.error('Error fetching documents:', err);
+    // Handle the error
+  });
+}
+module.exports.face = (req,res)=>{
+  const pythonScript = '/E-portal/E-portal/FaceId/face.py';
+  exec(`python ${pythonScript}`, (err, stdout, stderr) => {
+    if (err) {
+      console.error(`Error executing Python script: ${err}`);
+      res.status(500).send('Error executing Python script');
+      return;
+    }
+    console.log(`Python script output: ${stdout}`);
+    return res.redirect('/lawyer/logging')
+  });
 }

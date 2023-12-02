@@ -11,8 +11,7 @@ const register_schema_client = new mongoose.Schema({
     },
     email:{
         type:String,
-        required:true,
-        unique:true
+        required:true
     },
     phone:{
         type:String,
@@ -34,10 +33,6 @@ const register_schema_client = new mongoose.Schema({
         type:String,
         required:true
     },
-    face_id:{
-        type:String,
-        // required:true
-    }
 });
 
 const Register_client = mongoose.model('Register1',register_schema_client);

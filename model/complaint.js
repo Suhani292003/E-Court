@@ -30,7 +30,7 @@ const case_schema = new mongoose.Schema({
     },
     comp_district:{
         type:String,
-        required:true
+        required:true 
     },
     comp_age:{
         type:Number,
@@ -53,7 +53,7 @@ const case_schema = new mongoose.Schema({
         required:true
     },
     pincode:{
-        type:Number,
+        type:String,
         required:true
     }
 

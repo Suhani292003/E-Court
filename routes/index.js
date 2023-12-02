@@ -9,7 +9,11 @@ router.get('/about',homeController.aboutUS);
 router.get('/service',homeController.services);
 router.get('/dashboard',homeController.dashboard)
 router.get('/contactUs',homeController.contactUs)
+router.get('/site_map',homeController.siteMap);
+router.get('/terms&condition',homeController.terms);
+
+router.post('/contactUs_data',homeController.contactUs_data)
 router.use('/client',require('./client'));//controll all user requestsy
 //for any further routes access from here
-router.use('/lawyer',require('./lawyer'));
+router.use('/lawyer',require('./lawyer')); 
 module.exports = router;
