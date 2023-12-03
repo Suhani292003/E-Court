@@ -96,30 +96,23 @@ h3 {
 <body>
   <nav class="nav-head">
         <img src="https://www.designmantic.com/logo-images/3563.png?company=Company+Name&slogan=&verify=1" alt="logo" class="logo">
-        <h1>E-Portal</h1>
+        <h1 style="position: relative; left: -80px;">E-Portal</h1>
         <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Register/Login
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="/logging">As Lawyer</a></li>
-              <li><a class="dropdown-item" href="/logging">As Client</a></li>
-            </ul>
           </div>
         </nav>
         <section>
           <div class="container row">
-            <form action="" class="comp" method="post">
+            <form action="/lawyer/documentBox" class="comp" method="post">
               <h3>Respondant Form</h3> 
               <div class="row">
                 <div class="col">
                   <label for="name">Defendent Name :</label><br>
-                  <input type="text" name="Complainant_name" required id="name">
+                  <input type="text" name="Defendent_name" required id="name">
                 </div>
                 
                 <div class="col">
                   <label for="mobNum">Mobile number :</label><br>
-                  <input type="number" name="phone" id="mobNum" required >
+                  <input type="number" name="phone_def" id="mobNum" required >
                 </div>
             </div>
           
@@ -143,10 +136,10 @@ h3 {
             <div class="row">
               <div class="col">
                 <label for="relType">Email ID :</label><br>
-                <input type="email" id="relType" name="com_relation" required></div>
+                <input type="email" id="relType" name="email" required></div>
                 <div class="col">
                   <label for="ward">District :</label><br>
-                  <input type="text" name="ward" id="ward" required>
+                  <input type="text" name="district" id="district" required>
                 </div>
               </div><br><br>
               
@@ -154,21 +147,23 @@ h3 {
             <div class="row">
               <div class="col">
                 <label for="myfile">FIR copy :</label>
-                <input type="file" id="myfile" name="myfile">
+                <input type="file" id="myfile" name="Fir_copy">
               </div>
               
               <div class="col">
-                <label for="myfile">Vakalnama :</label>
-                <input type="file" id="myfile" name="myfile">
+                <label for="myfile">Vakalatnama :</label>
+                <input type="file" id="myfile" name="Vakalatnama">
               </div>
             </div>
-            <div class="col">
+            <div class="col" style="position: relative; left: -15px;">
               <label for="myfile">Affidavit :</label><br>
-              <input type="file" id="myfile" name="myfile">
+              <input type="file" id="myfile" name="Affidavit">
             </div>
             
         <input class="btn btn-primary buttons" type="reset" value="Reset">
-        <input class="btn btn-success buttons" type="submit" value="Submit">
+        <button class="btn" type="submit" style="position: relative; top: 25px;">
+          <span class="btnText">Submit</span>
+      </button>
       </div>
     </section>
     <footer>

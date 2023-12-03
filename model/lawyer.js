@@ -19,8 +19,7 @@ const contact_schema = new mongoose.Schema({
     },
     bar_association_no:{
         type:String,
-        required:true,
-        // unique:true
+        required:true
     }
 });
 
