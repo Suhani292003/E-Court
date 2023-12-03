@@ -149,4 +149,11 @@ footer {
   border-radius: 5px;
   text-align: center;
 }
- 
+    /* video conference CSS */
+    .join-btn {
+      background-color: rgb(63, 0, 0);
+      color: white;
+    }
+    #onlineHearing {      
+      margin: 150px;
+    }
