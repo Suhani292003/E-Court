@@ -10,6 +10,14 @@ module.exports.logging = (req,res)=>{
     const filePath = path.join(__dirname, 'client', 'login_client.html'); // Path to your index.html file
     res.sendFile(filePath);
 }
+module.exports.meeting = (req,res)=>{
+  const filePath = path.join(__dirname, 'Video Conference', 'room.html'); // Path to your index.html file
+  res.sendFile(filePath);
+}
+module.exports.lobby = (req,res)=>{
+  const filePath = path.join(__dirname, 'Video Conference', 'lobby.html'); // Path to your index.html file
+  res.sendFile(filePath);
+}
 
 module.exports.client_register = (req,res)=>{
     const dataToSave = {

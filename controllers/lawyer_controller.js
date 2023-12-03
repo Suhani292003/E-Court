@@ -27,6 +27,14 @@ module.exports.document = (req,res)=>{
   const filePath = path.join(__dirname, 'lawyer', 'document.html'); // Path to your index.html file
     res.sendFile(filePath);
 }
+module.exports.meeting = (req,res)=>{
+  const filepath = path.join(__dirname,'Video Conference','room.html');
+  res.sendFile(filepath);
+}
+module.exports.lobby = (req,res)=>{
+  const filePath = path.join(__dirname,'Video Conference','lobby.html'); // Path to your index.html file
+  res.sendFile(filePath);
+}
 
 module.exports.numbers = (req,res)=>{
   const dataToSave =  {
