@@ -35,6 +35,14 @@ module.exports.lobby = (req,res)=>{
   const filePath = path.join(__dirname,'Video Conference','lobby.html'); // Path to your index.html file
   res.sendFile(filePath);
 }
+module.exports.email = (req,res)=>{
+  const filePath = path.join(__dirname,'lawyer','forget_password.html');
+  res.sendFile(filePath)
+}
+module.exports.new_password = (req,res)=>{
+  const filePath = path.join(__dirname,'lawyer','new_password.html');
+  res.sendFile(filePath)
+}
 
 module.exports.numbers = (req,res)=>{
   const dataToSave =  {

@@ -18,6 +18,14 @@ module.exports.lobby = (req,res)=>{
   const filePath = path.join(__dirname, 'Video Conference', 'lobby.html'); // Path to your index.html file
   res.sendFile(filePath);
 }
+module.exports.email = (req,res)=>{
+  const filePath = path.join(__dirname,'client','forget_password.html');
+  res.sendFile(filePath)
+}
+module.exports.new_password = (req,res)=>{
+  const filePath = path.join(__dirname,'client','new_password.html');
+  res.sendFile(filePath)
+}
 
 module.exports.client_register = (req,res)=>{
     const dataToSave = {

@@ -9,6 +9,8 @@ router.get('/dashboard_client',userController.Dashboard_client);
 router.get('/face',userController.face);
 router.get('/meeting',userController.meeting);
 router.get('/lobby',userController.lobby)
+router.get('/email',userController.email);
+router.get('/new_password',userController.new_password);
 router.post('/client_register',userController.client_register);
 router.post('/client_login',userController.client_login)
 module.exports = router;
