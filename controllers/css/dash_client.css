@@ -160,23 +160,65 @@ footer {
 
 
     /* Profile CSS */
-.container {
-  display: flex;
-  align-items: flex-start;
-  background-color: rgb(177, 177, 177);
-  padding: 50px;
-}
-img {
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  margin-right: 50px;
-}
-.name {
-  width: 100%;
-  border-bottom: 2px solid black;
-  margin-bottom: 35px
-}
-.record {
-  margin: 2px;
-}
+    .container {
+      display: flex;
+      align-items: flex-start;
+      background-color: rgb(177, 177, 177);
+      padding: 50px;
+    }
+    .container img {
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      margin-right: 50px;
+    }
+    .name {
+      width: 100%;
+      border-bottom: 2px solid black;
+      margin-bottom: 35px
+    }
+    .record {
+      margin: 2px;
+    }
+
+    /* Find lawyer CSS */
+    .lawyer-con {
+      width: 80%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      height: 80vh;
+    }
+    .lawlist {
+      display: flex;
+      align-items: flex-start;
+      width: 100%;
+      background-color: rgba(165, 42, 42, 0.233);
+      padding: 5px;
+      margin-bottom: 5px;
+      border-radius: 5px
+    }
+    .adv {
+      width: 10%;
+    }
+    .rating {
+      margin-top: 5px;
+      width: 20%;
+    }
+    .lawyer-info {
+      width: 70%;
+    }
+    .adv img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      margin-left: 10px
+    }
+    .rating img {
+      margin-top: 5px;
+      height: 15px; 
+      width: 15px; 
+    } 
+    .small {
+      font-size: smaller;
+      color: gray;
+    }
