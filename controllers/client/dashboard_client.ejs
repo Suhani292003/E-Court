@@ -56,6 +56,26 @@
          </nav> 
      <section class="main" id="main_place">
        <div class="Dcards">
+             
+        <div id="Profile" class="box11 hide" >
+          <div class="container">
+            <div class="userImg">
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="user">
+            </div>
+            <div class="details">
+            <div class="name">
+                <h2>Gaurav Singh</h2>
+            </div>
+            <p class="record">+91 6268598733</p><br>
+            <p class="record">gaurav07singh10@gmail.com</p><br>
+            <p class="record">State - Madhya Pradesh</p><br>
+            <p class="record">District - Bhopal</p><br>
+            <p class="record">Bar no. - MP/1234/2003</p><br>
+            <p class="record"></p><br>
+        </div>
+    </div>
+        </div>          
+
             <div id="caseStatus" class="box22 hide" >
                <h1>case status will appear</h1>     
             </div>
@@ -101,14 +121,19 @@
       var box22 = document.querySelector('.box22');
       var box33 = document.querySelector('.box33');
      
+      btn11.addEventListener('click', function () {
+        box11.classList.add('show');
+        box22.classList.remove('show');
+        box33.classList.remove('show');
+      });
       btn22.addEventListener('click', function () {
         box22.classList.add('show');
-        // box11.classList.remove('show');
+        box11.classList.remove('show');
         box33.classList.remove('show');
       });
       btn33.addEventListener('click', function () {
         box33.classList.add('show');
-        // box11.classList.remove('show');
+        box11.classList.remove('show');
         box22.classList.remove('show');
       });
       

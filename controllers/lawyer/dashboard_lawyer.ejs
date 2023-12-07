@@ -30,10 +30,10 @@
        <h6>Dashboard</h6>
       </div>
       <div>
-      <button class="btn11 dash-btn">New Case</button>
-      <button class="btn22 dash-btn">Case Status</button>
-      <button class="btn33 dash-btn">Video Conference</button>
-      <button class="btn44 dash-btn">Profile</button>
+        <button class="btn11 dash-btn">Profile</button>
+      <button class="btn22 dash-btn">New Case</button>
+      <button class="btn33 dash-btn">Case Status</button>
+      <button class="btn344 dash-btn">Video Conference</button>
       <button class="btn55 dash-btn">Total Cases</button>
       <button class="btn6 dash-btn">Case Info</button>
 
@@ -55,12 +55,31 @@
                      <li><a class="dropdown-item" href="https://district.mphc.gov.in/">District Court</a></li>
                    </ul>
                  </div>
-               </ul> -->
-         </nav> 
-     <section class="main" id="main_place">
-       <div class="Dcards">
+                </ul> -->
+              </nav> 
+              <section class="main" id="main_place">
+                <div class="Dcards">
+
+         <div id="Profile" class="box11 hide" >
+           <div class="container">
+             <div class="userImg">
+                 <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="user">
+             </div>
+             <div class="details">
+             <div class="name">
+                 <h2>Gaurav Singh</h2>
+             </div>
+             <p class="record">+91 6268598733</p><br>
+             <p class="record">gaurav07singh10@gmail.com</p><br>
+             <p class="record">State - Madhya Pradesh</p><br>
+             <p class="record">District - Bhopal</p><br>
+             <p class="record">Bar no. - MP/1234/2003</p><br>
+             <p class="record"></p><br>
+         </div>
+     </div>
+         </div>
           
-            <div id="newCase" class="box11 hide" >
+            <div id="newCase" class="box22 hide" >
               <div class="typeform">
                 <h3>case form</h3>
                 <form action="/lawyer/case" method="post">
@@ -118,7 +137,7 @@
         </div>
             </div>
 
-            <div id="caseStatus" class="box22 hide" >
+            <div id="caseStatus" class="box33 hide" >
                <ul>
                 <% documents.forEach(function(caseItem) { %>
                   <li>
@@ -131,11 +150,12 @@
                
             </div>
             
-            <div id="onlineHearing" class="box33 hide" >
+            <div id="onlineHearing" class="box44 hide" >
               <span>To join your online video conferencing hearing click the button below</span><br><br>
               <span>You will require to provide your <br> 1.Name <br>2.Room Password <br> 3.Your FaceID</span><br><br>
               <a href="/lawyer/meeting" class="btn join-btn">Join Hearing</a>
             </div>
+
        </div>
      </section>
   </section> 
@@ -168,24 +188,35 @@
       var btn11 = document.querySelector('.btn11');
       var btn22 = document.querySelector('.btn22');
       var btn33 = document.querySelector('.btn33');
+      var btn33 = document.querySelector('.btn44');
       var box11 = document.querySelector('.box11');
       var box22 = document.querySelector('.box22');
       var box33 = document.querySelector('.box33');
+      var box33 = document.querySelector('.box44');
      
       btn11.addEventListener('click', function () {
         box11.classList.add('show');
         box22.classList.remove('show');
         box33.classList.remove('show');
+        box44.classList.remove('show');
       });
       btn22.addEventListener('click', function () {
         box22.classList.add('show');
         box11.classList.remove('show');
         box33.classList.remove('show');
+        box44.classList.remove('show');
       });
       btn33.addEventListener('click', function () {
         box33.classList.add('show');
         box11.classList.remove('show');
         box22.classList.remove('show');
+        box44.classList.remove('show');
+      });
+      btn44.addEventListener('click', function () {
+        box44.classList.add('show');
+        box11.classList.remove('show');
+        box22.classList.remove('show');
+        box33.classList.remove('show');
       });
 
       </script> 
