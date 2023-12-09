@@ -96,3 +96,15 @@ module.exports.Dashboard_client = (req,res)=>{
   res.render('../controllers/client/dashboard_client');
   return
 }
+module.exports.verify_img = (req,res)=>{
+  const pythonScript = '/E-Court/E-portal/FaceId/verify_client.py';
+  exec(`python ${pythonScript}`, (err, stdout, stderr) => {
+    if (err) {
+      console.error(`Error executing Python script: ${err}`);
+      res.status(500).send('Error executing Python script');
+      return;
+    }
+    console.log(`Python script output: ${stdout}`);
+    return res.redirect('/client/meeting')
+  });
+}

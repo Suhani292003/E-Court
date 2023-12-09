@@ -198,3 +198,15 @@ module.exports.face = (req,res)=>{
     return res.redirect('/lawyer/logging')
   });
 }
+module.exports.verify_img = (req,res)=>{
+  const pythonScript = '/E-Court/E-portal/FaceId/verify_lawyer.py';
+  exec(`python ${pythonScript}`, (err, stdout, stderr) => {
+    if (err) {
+      console.error(`Error executing Python script: ${err}`);
+      res.status(500).send('Error executing Python script');
+      return;
+    }
+    console.log(`Python script output: ${stdout}`);
+    return res.redirect('/lawyer/meeting')
+  });
+}
