@@ -80,7 +80,7 @@ module.exports.client_login = (req,res)=>{
     }) 
 }
 module.exports.face = (req,res)=>{
-  const pythonScript = '/E-portal/E-portal/FaceId/face_client.py';
+  const pythonScript = '/E-Court/E-portal/FaceId/face_client.py';
   exec(`python ${pythonScript}`, (err, stdout, stderr) => {
     if (err) {
       console.error(`Error executing Python script: ${err}`);
