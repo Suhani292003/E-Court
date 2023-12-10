@@ -11,7 +11,7 @@
 </head>
 <body>
   <nav class="nav-head">
-      <img src="https://www.designmantic.com/logo-images/3563.png?company=Company+Name&slogan=&verify=1" alt="logo" class="logo">
+      <img src="../images/Logopng-02.png" alt="logo" class="logo">
       <h1>E-Portal</h1>
       <div class="user">
         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -138,15 +138,34 @@
             </div>
 
             <div id="caseStatus" class="box33 hide" >
-               <ul>
-                <% documents.forEach(function(caseItem) { %>
-                  <li>
-                    <p style="background-color: black;">Complainant_name: <%= caseItem.Complainant_name %></p> <br>
-                    <p style="background-color: black;">phone: <%= caseItem.phone %></p> <br>
-                    <p style="background-color: black;">Lawyer Name: <%= caseItem.relative_name %> <br>
-                  </li>
-                <% }); %>
-              </ul>
+              <div class="container">
+                <div class="wrapper">
+                    <form action="/lawyer/lawyer_login" method="post">
+                        <h1>Case Type</h1>
+                        <div class="input-box">
+                            <input type="text" name="username" placeholder="Case Type" required>
+        
+                        </div>
+        
+                        <div class="input-box">
+                            <input type="number" placeholder="Number" required>
+                        </div>
+        
+                        <a href="/lawyer/dashboard" class="btn">Show</a>
+                    </form>
+                </div>
+            
+                    <div class="wrapper CNR">
+                        <form action="/client/client_login" method="post">
+                            <h1>Search by CNR number</h1>
+            
+                            <div class="input-box">
+                                <input type="text" name="username" placeholder="Enter 16 digit CNR number" required>
+                            </div>
+                        <a href="/client/dashboard" class="btn">Show</a>
+                    </form>
+                </div>
+            </div>
                
             </div>
             
