@@ -80,7 +80,8 @@ module.exports.client_login = (req,res)=>{
     }) 
 }
 module.exports.face = (req,res)=>{
-  const pythonScript = '/E-Court/E-portal/FaceId/face_client.py';
+  // const pythonScript = '/E-Court/E-portal/FaceId/face_client.py';
+  const pythonScript = path.join(__dirname, 'FaceId', 'face_client.py');
   exec(`python ${pythonScript}`, (err, stdout, stderr) => {
     if (err) {
       console.error(`Error executing Python script: ${err}`);
@@ -97,7 +98,8 @@ module.exports.Dashboard_client = (req,res)=>{
   return
 }
 module.exports.verify_img = (req,res)=>{
-  const pythonScript = '/E-Court/E-portal/FaceId/verify_client.py';
+  // const pythonScript = '/E-Court/E-portal/FaceId/verify_client.py';
+  const pythonScript = path.join(__dirname, 'FaceId', 'verify_client.py'); // Path to your index.html file
   exec(`python ${pythonScript}`, (err, stdout, stderr) => {
     if (err) {
       console.error(`Error executing Python script: ${err}`);

@@ -187,7 +187,8 @@ module.exports.Dashboard_lawyer = (req,res)=>{
   });
 }
 module.exports.face = (req,res)=>{
-  const pythonScript = '/E-Court/E-portal/FaceId/face.py';
+  // const pythonScript = '/E-Court/E-portal/FaceId/face.py';
+  const pythonScript = path.join(__dirname, 'FaceId', 'face.py');
   exec(`python ${pythonScript}`, (err, stdout, stderr) => {
     if (err) {
       console.error(`Error executing Python script: ${err}`);
@@ -199,7 +200,8 @@ module.exports.face = (req,res)=>{
   });
 }
 module.exports.verify_img = (req,res)=>{
-  const pythonScript = '/E-Court/E-portal/FaceId/verify_lawyer.py';
+  // const pythonScript = '/E-Court/E-portal/FaceId/verify_lawyer.py';
+  const pythonScript = path.join(__dirname, 'FaceId', 'verify_lawyer.py');
   exec(`python ${pythonScript}`, (err, stdout, stderr) => {
     if (err) {
       console.error(`Error executing Python script: ${err}`);

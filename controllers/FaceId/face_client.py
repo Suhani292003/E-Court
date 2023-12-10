@@ -3,7 +3,7 @@ import cv2
 import os
 uuid.uuid1()
 
-VER_PATH = os.path.join('FaceId','application_data', 'verification_images_client')
+VER_PATH = os.path.join('controllers','FaceId','application_data', 'verification_images_client')
 #Establish a connection to webcam
 cap = cv2.VideoCapture(0)
 while True:
