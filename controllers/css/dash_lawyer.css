@@ -347,3 +347,18 @@ footer {
         .register-link p a:hover {
             text-decoration: underline;
         }
+.section {
+    display: grid;
+    grid-template-rows: 1fr, 1fr;
+    width: 100vb;
+}
+.card {
+            /* margin-top: 55px; */
+            margin-left: 20px;
+}
+/* .fcard {
+            margin-left: 70px;
+}
+.row {
+            width: max-content;
+} */
