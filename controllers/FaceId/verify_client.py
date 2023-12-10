@@ -10,7 +10,7 @@ while True:
     ret,frame = cap.read()
     #cut down frame to 250*250px
     frame = frame[120:120+250,200:200+250,:]
-    cv2.imshow('Webcam', frame)
+    cv2.imshow('press "v" to input face', frame)
     key = cv2.waitKey(1)
     #collect anchor
     if key & 0XFF == ord('v'):
